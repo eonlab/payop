@@ -8,7 +8,7 @@ class Order
     public string $id;
     public string $amount;
     public string $currency;
-    public array $items;
+    public array $items = [];
     public string $description;
     public array $payer;
 
@@ -115,7 +115,7 @@ class Order
      */
     public function setItems(array $items): Order
     {
-        $this->items[] = $items;
+        array_push($this->items, $items);
         return $this;
     }
 
@@ -139,7 +139,7 @@ class Order
         return [
             'id'          => $this->id,
             'amount'      => $this->amount,
-            'status'      => $this->currency,
+            'currency'    => $this->currency,
             'items'       => $this->items,
             'description' => $this->description,
         ];

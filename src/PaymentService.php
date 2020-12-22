@@ -70,14 +70,14 @@ class PaymentService extends HttpRequests
      * @return array
      * @throws GetPaymentMethodException
      */
-    public function getPaymentMethods(): array
+    public function getPaymentMethods(): APIResponse
     {
         $uri = $this->buildUri('instrument-settings/payment-methods/available-for-application/' . $this->projectID);
         $response = $this->_request('GET', $uri);
         if ($response->getStatusCode() !== 200 ) {
             throw new GetPaymentMethodException();
         }
-        return $response->getBody();
+        return $response;
     }
 
 
@@ -147,7 +147,7 @@ class PaymentService extends HttpRequests
      *
      * @return array
      */
-    public function invoiceObjectCreate(Invoice $invoice, Order $order, string $signature): Invoice
+    public function invoiceObjectCreate(Invoice $invoice, Order $order, string $signature): array
     {
         $invoice->setOrder($order->toArray());
         $invoice->setSignature($signature);
@@ -185,7 +185,7 @@ class PaymentService extends HttpRequests
         $signature = $this->sign($order);
         $invoice = $this->invoiceObjectCreate($invoice, $order, $signature);
         $uri = $this->buildUri('invoices/create');
-        $response = $this->_request('POST', $uri, $invoice->toArray());
+        $response = $this->_request('POST', $uri, $invoice);
         if ($response->getStatusCode() !== 200 ) {
             throw new CreateInvoiceException();
         }

@@ -6,6 +6,7 @@ use BNG\APIResponse;
 use BNG\Types\HttpMethod;
 use Guzzle\Http\Exception\ClientErrorResponseException;
 use GuzzleHttp\Client;
+use InvalidArgumentException;
 
 class HttpRequests
 {
@@ -29,6 +30,7 @@ class HttpRequests
     protected function _request(string $method, string $uri, array $payload = [])
     {
         $headers = [
+            'Content-type'  => 'application/json',
             'Authorization' => $this->apiKey(),
         ];
         switch ($method) {
@@ -41,14 +43,10 @@ class HttpRequests
                 break;
 
             case HttpMethod::POST:
-                try {
-                    $response = $this->client->post($uri, [
-                        'headers'     => $headers,
-                        'form_params' => $payload,
-                    ]);
-                } catch (ClientErrorResponseException $exception) {
-                    var_dump($exception);
-                }
+                $response = $this->client->post($uri, [
+                    'headers' => $headers,
+                    'json'    => $payload,
+                ]);
                 return new APIResponse($response);
                 break;
             case HttpMethod::DELETE:
