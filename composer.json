@@ -1,0 +1,21 @@
+{
+    "name": "bynogame/payop-api",
+    "description": "ByNoGame",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "minimum-stability": "stable",
+    "require": {
+        "guzzle/guzzle": "^3.9",
+        "nesbot/carbon": "dev-master",
+        "guzzlehttp/guzzle": "^7.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "BNG\\": "src/"
+        }
+    }
+}
