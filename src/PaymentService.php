@@ -52,7 +52,7 @@ class PaymentService extends HttpRequests
      * @return array
      * @throws CardTokenizationException
      */
-    public function cardTokenization($invoiceID, Payer $payer): array
+    public function cardTokenization(string $invoiceID, Payer $payer): array
     {
         $uri = $this->buildUri('payment-tools/card-token/create');
         $payload = $payer->toArray();
@@ -77,7 +77,7 @@ class PaymentService extends HttpRequests
         if ($response->getStatusCode() !== 200 ) {
             throw new GetPaymentMethodException();
         }
-        return $response;
+        return $response->getBody();
     }
 
 
@@ -131,7 +131,7 @@ class PaymentService extends HttpRequests
      *
      * @return string
      */
-    protected function sign(Order $order)
+    protected function sign(Order $order): string
     {
         $order = $order->toArray();
         ksort($order, SORT_STRING);
