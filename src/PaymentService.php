@@ -136,7 +136,7 @@ class PaymentService extends HttpRequests
         $order = $order->toArray();
         ksort($order, SORT_STRING);
         $dataSet = array_values($order);
-        $dataSet[] = PayOp::SECRET_KEY;
+        $dataSet[] = config('payop.secret_key');
         return hash('sha256', implode(':', $dataSet));
     }
 
