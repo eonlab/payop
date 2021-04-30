@@ -6,7 +6,6 @@
     "version": "1.0.0",
     "minimum-stability": "stable",
     "require": {
-        "guzzle/guzzle": "^7.2.0",
         "nesbot/carbon": "^2.46",
         "guzzlehttp/guzzle": "^7.2",
         "ext-json": "*"
