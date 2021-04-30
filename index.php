@@ -1,10 +1,10 @@
 <?php
 
-use BNG\Constants\PayOp;
-use BNG\Exceptions\CardTokenizationException;
-use BNG\Order;
-use BNG\Payer;
-use BNG\PaymentService;
+use Eonlab\Constants\PayOp;
+use Eonlab\Exceptions\CardTokenizationException;
+use Eonlab\Order;
+use Eonlab\Payer;
+use Eonlab\PaymentService;
 
 include 'vendor/autoload.php';
 
