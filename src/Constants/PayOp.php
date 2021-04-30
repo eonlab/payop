@@ -6,7 +6,7 @@ class PayOp
 {
     const PUBLIC_KEY = '';
     const SECRET_KEY = '';
-    const SERVICE_TOKEN = '');
+    const SERVICE_TOKEN = '';
     const PROJECT_ID = '';
 
 
