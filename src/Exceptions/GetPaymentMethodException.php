@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BNG\Exceptions;
+namespace Eonlab\Exceptions;
 
 
 use Exception;
