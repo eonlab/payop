@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BNG;
+namespace Eonlab;
 
 
 class Payer
