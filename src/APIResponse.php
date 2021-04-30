@@ -1,11 +1,11 @@
 <?php
 
-namespace BNG;
+namespace Eonlab;
 
 
 use Psr\Http\Message\ResponseInterface;
-use BNG\Exceptions\ServiceException;
-use BNG\Types\ResponseStatus;
+use Eonlab\Exceptions\ServiceException;
+use Eonlab\Types\ResponseStatus;
 
 /**
  * @author  : Uğur Müslim
