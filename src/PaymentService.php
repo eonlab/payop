@@ -133,14 +133,7 @@ class PaymentService extends HttpRequests
      */
     protected function sign(Order $order): string
     {
-        $order = $order->toArray();
-        ksort($order, SORT_STRING);
-        $dataSet = array_values($order);
-        unset($dataSet[2]);
-        unset($dataSet[4]);
-        $dataSet[] = config('payop.secret_key');
-      //  dump($dataSet);
-       // die();
+        $dataSet = [$order->getAmount(), $order->getCurrency(), $order->getOrderID(), config('payop.secret_key')];
         return hash('sha256', implode(':', $dataSet));
     }
 
