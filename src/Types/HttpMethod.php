@@ -1,6 +1,6 @@
 <?php
 
-namespace BNG\Types;
+namespace Eonlab\Types;
 
 
 /**
