@@ -1,9 +1,9 @@
 <?php
 
-namespace BNG\Shared;
+namespace Eonlab\Shared;
 
-use BNG\APIResponse;
-use BNG\Types\HttpMethod;
+use Eonlab\APIResponse;
+use Eonlab\Types\HttpMethod;
 use Guzzle\Http\Exception\ClientErrorResponseException;
 use GuzzleHttp\Client;
 use InvalidArgumentException;
