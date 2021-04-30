@@ -3,10 +3,10 @@ namespace Eonlab\Constants;
 
 class PayOp
 {
-    const PUBLIC_KEY = 'application-88956a49-a99a-401f-b617-17c98fc17eca';
-    const SECRET_KEY = 'c495d35e5a89d4600ace2b1e';
-    const SERVICE_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTY3ODksImFjY2Vzc1Rva2VuIjoiYTgzNTkxODI2OGVmOGU0NTFiYWVlMWI0IiwidG9rZW5JZCI6MTc4OCwid2FsbGV0SWQiOjQ4OTI3LCJ0aW1lIjoxNjA4NTg3MTUxLCJleHBpcmVkQXQiOjE2MDkzNjIwMDAsInJvbGVzIjpbMV0sInR3b0ZhY3RvciI6eyJwYXNzZWQiOmZhbHNlfX0.YOeZ-hyXIPU09FtvvOkoZg5fgPAmXdLudOFNW1K-T24';
-    const PROJECT_ID = '88956a49-a99a-401f-b617-17c98fc17eca';
+    const PUBLIC_KEY = config('payop.public_key');
+    const SECRET_KEY = config('payop.secret_key');
+    const SERVICE_TOKEN = config('payop.service_token');
+    const PROJECT_ID = config('payop.project_id');
 
 
     const EXAMPLE_PAYER_PAN = "5555555555554444";
