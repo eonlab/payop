@@ -136,7 +136,11 @@ class PaymentService extends HttpRequests
         $order = $order->toArray();
         ksort($order, SORT_STRING);
         $dataSet = array_values($order);
+        unset($dataSet[2]);
+        unset($dataSet[4]);
         $dataSet[] = config('payop.secret_key');
+      //  dump($dataSet);
+       // die();
         return hash('sha256', implode(':', $dataSet));
     }
 
@@ -155,7 +159,7 @@ class PaymentService extends HttpRequests
         $invoice->setPayer(self::PAYER);
         $invoice->setLanguage('en');
         $invoice = $invoice->toArray();
-        $invoice['publicKey'] = PayOp::PUBLIC_KEY;
+        $invoice['publicKey'] = config('payop.public_key');
         $invoice['resultUrl'] = ReturnHandleUrls::RESULT_URL;
         $invoice['failPath'] = ReturnHandleUrls::FAIL_URL;
         return $invoice;
