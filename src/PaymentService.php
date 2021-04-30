@@ -1,14 +1,14 @@
 <?php
 
-namespace BNG;
+namespace Eonlab;
 
-use BNG\Constants\PayOp;
-use BNG\Constants\ReturnHandleUrls;
-use BNG\Exceptions\CardTokenizationException;
-use BNG\Exceptions\CreateInvoiceException;
-use BNG\Exceptions\GetPaymentMethodException;
+use Eonlab\Constants\PayOp;
+use Eonlab\Constants\ReturnHandleUrls;
+use Eonlab\Exceptions\CardTokenizationException;
+use Eonlab\Exceptions\CreateInvoiceException;
+use Eonlab\Exceptions\GetPaymentMethodException;
 use GuzzleHttp\Exception\GuzzleException;
-use BNG\Shared\HttpRequests;
+use Eonlab\Shared\HttpRequests;
 
 class PaymentService extends HttpRequests
 {
