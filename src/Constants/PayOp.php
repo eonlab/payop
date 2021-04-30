@@ -1,5 +1,5 @@
 <?php
-namespace BNG\Constants;
+namespace Eonlab\Constants;
 
 class PayOp
 {
